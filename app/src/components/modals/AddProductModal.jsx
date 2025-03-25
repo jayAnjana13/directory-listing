@@ -17,7 +17,7 @@ const AddProductModal = ({ show, handleClose }) => {
   // States for selected values
   const [selectedProduct, setSelectedProduct] = useState("");
   const [selectedMaterial, setSelectedMaterial] = useState("");
-  const [selectedGrades, setSelectedGrades] = useState([]); // Multi-select
+  const [selectedGrades, setSelectedGrades] = useState([]);
 
   useEffect(() => {
     dispatch(fetchProducts());
@@ -49,18 +49,17 @@ const AddProductModal = ({ show, handleClose }) => {
       materials.find((m) => m._id === selectedMaterial)?.name || "Unknown";
 
     // Prepare multiple combinations (one per selected grade)
-    // Prepare multiple combinations (one per selected grade)
     const combinationData = selectedGrades.map((gradeId) => {
       const gradeName =
         grades.find((g) => g._id === gradeId)?.name || "Unknown";
 
       return {
         productId: selectedProduct,
-        productName: selectedProductName, // ✅ Save Product Name
+        productName: selectedProductName,
         materialId: selectedMaterial,
-        materialName: selectedMaterialName, // ✅ Save Material Name
+        materialName: selectedMaterialName,
         gradeId,
-        gradeName, // ✅ Save Grade Name
+        gradeName,
       };
     });
 

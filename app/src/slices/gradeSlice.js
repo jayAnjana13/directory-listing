@@ -1,12 +1,12 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { addGrade, getGrades } from "../services/api";
 
-// ✅ Fetch Grades
+//  Fetch Grades
 export const fetchGrades = createAsyncThunk("grades/fetchGrades", async () => {
   return await getGrades();
 });
 
-// ✅ Add Grade
+//  Add Grade
 export const createGrade = createAsyncThunk(
   "grades/createGrade",
   async (gradeData) => {

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { addMaterial, getMaterials } from "../services/api";
 
-// ✅ Fetch Materials
+//  Fetch Materials
 export const fetchMaterials = createAsyncThunk(
   "materials/fetchMaterials",
   async () => {
@@ -9,7 +9,7 @@ export const fetchMaterials = createAsyncThunk(
   }
 );
 
-// ✅ Add Material
+//  Add Material
 export const createMaterial = createAsyncThunk(
   "materials/createMaterial",
   async (materialData) => {

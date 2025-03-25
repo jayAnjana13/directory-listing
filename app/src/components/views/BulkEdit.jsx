@@ -24,7 +24,7 @@ const BulkEdit = ({ selectedProducts, onBulkEdit }) => {
 
   // Apply Bulk Edit
   const handleBulkSave = () => {
-    onBulkEdit(bulkEditData); // Send data to HomePage
+    onBulkEdit(bulkEditData);
     setShowModal(false);
   };
 
